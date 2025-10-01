@@ -1,0 +1,244 @@
+<!-- farmacias/dashboard.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmApp - Dashboard da Farmácia</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">FarmApp</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../publico/index.html">Para o Público</a></li>
+                    <li><a href="#" id="logout-btn">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="pharmacy-info">
+                <h2>Farmácia Central</h2>
+                <p>Av. 25 de Setembro, 123 - Maputo</p>
+                <div class="status-indicator">
+                    <span class="status-dot open"></span>
+                    <span>Status: Aberta</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#estoque" class="nav-link active">Gerenciar Estoque</a></li>
+                    <li><a href="#horarios" class="nav-link">Horários</a></li>
+                    <li><a href="#estatisticas" class="nav-link">Estatísticas</a></li>
+                    <li><a href="#perfil" class="nav-link">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="main-content">
+            <div class="content-section active" id="estoque">
+                <h1>Gerenciar Estoque</h1>
+                
+                <div class="search-add-bar">
+                    <div class="search-box">
+                        <input type="text" id="search-medicine" placeholder="Buscar medicamento...">
+                        <button id="search-medicine-btn" class="btn">Buscar</button>
+                    </div>
+                    <button id="add-medicine-btn" class="btn btn-primary">Adicionar Medicamento</button>
+                </div>
+                
+                <div class="stock-table-container">
+                    <table class="stock-table">
+                        <thead>
+                            <tr>
+                                <th>Medicamento</th>
+                                <th>Estoque</th>
+                                <th>Preço (MZN)</th>
+                                <th>Última Atualização</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stock-table-body">
+                            <!-- Os dados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="content-section" id="horarios">
+                <h1>Horários de Funcionamento</h1>
+                <div class="schedule-container">
+                    <div class="schedule-card">
+                        <h3>Horário Regular</h3>
+                        <div class="schedule-form">
+                            <div class="form-group">
+                                <label>Horário Padrão</label>
+                                <input type="text" id="regular-schedule" value="Segunda a Sexta: 8h-20h, Sábado: 8h-18h, Domingo: 9h-13h">
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="24h-checkbox">
+                                <label for="24h-checkbox">Aberta 24 horas</label>
+                            </div>
+                            <button class="btn btn-primary">Salvar Horário</button>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-card">
+                        <h3>Horários Especiais</h3>
+                        <div class="special-schedule-list">
+                            <div class="special-schedule-item">
+                                <div class="schedule-date">25 de Dezembro</div>
+                                <div class="schedule-hours">Fechado</div>
+                                <button class="btn btn-small btn-danger">Remover</button>
+                            </div>
+                            <div class="special-schedule-item">
+                                <div class="schedule-date">1 de Janeiro</div>
+                                <div class="schedule-hours">10h-14h</div>
+                                <button class="btn btn-small btn-danger">Remover</button>
+                            </div>
+                        </div>
+                        
+                        <div class="add-special-schedule">
+                            <h4>Adicionar Horário Especial</h4>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Data</label>
+                                    <input type="date" id="special-date">
+                                </div>
+                                <div class="form-group">
+                                    <label>Horário de Abertura</label>
+                                    <input type="time" id="special-open">
+                                </div>
+                                <div class="form-group">
+                                    <label>Horário de Fechamento</label>
+                                    <input type="time" id="special-close">
+                                </div>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <input type="checkbox" id="special-closed">
+                                <label for="special-closed">Fechado neste dia</label>
+                            </div>
+                            <button class="btn btn-primary">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section" id="estatisticas">
+                <h1>Estatísticas</h1>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">1,254</div>
+                        <div class="stat-label">Buscas no último mês</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">342</div>
+                        <div class="stat-label">Medicamentos em estoque</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">87%</div>
+                        <div class="stat-label">Taxa de disponibilidade</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">Medicamentos com estoque baixo</div>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <h3>Buscas por Medicamento (Top 10)</h3>
+                    <div class="chart-placeholder">
+                        <p>Gráfico seria exibido aqui em uma implementação completa</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-section" id="perfil">
+                <h1>Perfil da Farmácia</h1>
+                <div class="profile-form">
+                    <div class="form-group">
+                        <label for="profile-name">Nome da Farmácia</label>
+                        <input type="text" id="profile-name" value="Farmácia Central">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-address">Endereço</label>
+                        <textarea id="profile-address">Av. 25 de Setembro, 123 - Maputo</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-phone">Telefone</label>
+                        <input type="tel" id="profile-phone" value="+258 84 123 4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="profile-email">E-mail</label>
+                        <input type="email" id="profile-email" value="contato@farmaciacentral.co.mz">
+                    </div>
+                    <button class="btn btn-primary">Salvar Alterações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para adicionar/editar medicamento -->
+    <div id="medicine-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Adicionar Medicamento</h2>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <form id="medicine-form">
+                    <div class="form-group">
+                        <label for="medicine-name">Nome do Medicamento</label>
+                        <input type="text" id="medicine-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicine-principio">Princípio Ativo</label>
+                        <input type="text" id="medicine-principio">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="medicine-stock">Estoque</label>
+                            <input type="number" id="medicine-stock" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="medicine-price">Preço (MZN)</label>
+                            <input type="number" id="medicine-price" min="0" step="0.01" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicine-category">Categoria</label>
+                        <select id="medicine-category">
+                            <option value="">Selecione...</option>
+                            <option value="analgesico">Analgésico</option>
+                            <option value="antibiotico">Antibiótico</option>
+                            <option value="anti-inflamatorio">Anti-inflamatório</option>
+                            <option value="antialergico">Antialérgico</option>
+                            <option value="vitamina">Vitamina</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="medicine-receita">
+                        <label for="medicine-receita">Receita Obrigatória</label>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-outline close-modal">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

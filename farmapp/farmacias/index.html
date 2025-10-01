@@ -1,0 +1,116 @@
+<!-- farmacias/index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmApp - Área da Farmácia</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">FArmApp</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="../publico/index.html">Para o Público</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="login-section">
+        <div class="container">
+            <div class="login-container">
+                <h1>Área da Farmácia</h1>
+                <p>Faça login para gerenciar seu estoque</p>
+                
+                <form id="login-form" class="login-form">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <button type="submit" class="btn btn-full">Entrar</button>
+                </form>
+                
+                <div class="register-link">
+                    <p>Não tem uma conta? <a href="#" id="show-register">Cadastre sua farmácia</a></p>
+                </div>
+            </div>
+            
+            <div class="register-container" style="display: none;">
+                <h1>Cadastrar Farmácia</h1>
+                <p>Preencha os dados da sua farmácia</p>
+                
+                <form id="register-form" class="login-form">
+                    <div class="form-group">
+                        <label for="reg-nome">Nome da Farmácia</label>
+                        <input type="text" id="reg-nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-endereco">Endereço</label>
+                        <textarea id="reg-endereco" name="endereco" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-telefone">Telefone</label>
+                        <input type="tel" id="reg-telefone" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">E-mail</label>
+                        <input type="email" id="reg-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-senha">Senha</label>
+                        <input type="password" id="reg-senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-confirmar-senha">Confirmar Senha</label>
+                        <input type="password" id="reg-confirmar-senha" name="confirmar_senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-horario">Horário de Funcionamento</label>
+                        <input type="text" id="reg-horario" name="horario" placeholder="Ex: Seg-Sex: 8h-20h, Sáb: 8h-18h">
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="reg-24h" name="aberta_24h">
+                        <label for="reg-24h">Aberta 24 horas</label>
+                    </div>
+                    <button type="submit" class="btn btn-full">Cadastrar</button>
+                </form>
+                
+                <div class="register-link">
+                    <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FarmApp</h3>
+                    <p>Encontre o medicamento certo, na farmácia certa em Moçambique.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="../index.html">Página Inicial</a>
+                    <a href="../publico/index.html">Para o Público</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 FarmApp. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
