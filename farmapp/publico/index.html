@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmApp - Buscar Medicamentos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="../index.html">FarmApp</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Início</a></li>
+                    <li><a href="farmacias-proximas.php">Farmácias Próximas</a></li>
+                    <li><a href="../farmacias/login.php">Área da Farmácia</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="search-section">
+        <div class="container">
+            <h1>Encontre seu medicamento</h1>
+            <p>Digite o nome do medicamento que procura</p>
+            <form id="search-form" class="search-box" method="GET" action="buscar-medicamentos.php">
+                <input type="text" id="search-input" name="medicamento" placeholder="Ex: Paracetamol, Amoxicilina, Ibuprofeno..." required>
+                <button type="submit" class="btn">Buscar</button>
+            </form>
+            <div class="quick-searches">
+                <p>Buscar rapidamente:</p>
+                <div class="quick-buttons">
+                    <a href="buscar-medicamentos.php?medicamento=Paracetamol" class="btn-small">Paracetamol</a>
+                    <a href="buscar-medicamentos.php?medicamento=Amoxicilina" class="btn-small">Amoxicilina</a>
+                    <a href="buscar-medicamentos.php?medicamento=Ibuprofeno" class="btn-small">Ibuprofeno</a>
+                    <a href="buscar-medicamentos.php?medicamento=Dipirona" class="btn-small">Dipirona</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <h2>Como usar o FarmApp</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Busque pelo medicamento</h3>
+                    <p>Digite o nome do medicamento que você precisa</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Encontre farmácias próximas</h3>
+                    <p>Veja quais farmácias têm o medicamento em estoque</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Confirme disponibilidade</h3>
+                    <p>Verifique horários de funcionamento e estoque atual</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FarmApp</h3>
+                    <p>Encontre o medicamento certo, na farmácia certa em Moçambique.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Rápidos</h3>
+                    <a href="../index.html">Página Inicial</a>
+                    <a href="farmacias-proximas.php">Farmácias Próximas</a>
+                    <a href="../farmacias/login.php">Área da Farmácia</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 FarmApp. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
